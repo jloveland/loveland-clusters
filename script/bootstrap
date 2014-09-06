@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo 'setting up berkshelf'
+gem install berkshelf -v 2.0.18 --no-ri --no-rdoc
+berks -v
+
+echo 'installing spiceweasel'
+# uninstall conflicting dependencies
+gem uninstall varia_model
+gem uninstal buff-extensions
+gem uninstall buff-config
+gem uninstall yajl-ruby
+
+# install
+gem install buff-extensions -v 0.3.0
+gem install buff-config -v 0.4.0
+gem install varia_model -v 0.3.2
+gem install json -v 1.7.7
+gem install yajl-ruby -v 1.2.1
+gem install spiceweasel
+
+# install vagrant plugins
+
+
+# remove old version of berkshelf that spiceweasel installed
+gem uninstall berkshelf -v 2.0.14
+rbenv rehash

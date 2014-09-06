@@ -1,0 +1,12 @@
+{
+  "name": "lsa-develop",
+  "description": "3 lsa-develop cluster",
+  "cookbook_versions": {
+    "mongodb": "= 0.16.1"
+  },
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {},
+  "override_attributes": {}
+}
+

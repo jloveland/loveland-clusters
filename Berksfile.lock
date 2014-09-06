@@ -1,0 +1,31 @@
+{
+  "sources": {
+    "mongodb": {
+      "locked_version": "0.16.1"
+    },
+    "mysql": {
+      "locked_version": "5.5.1"
+    },
+    "apt": {
+      "locked_version": "2.5.3"
+    },
+    "yum": {
+      "locked_version": "3.3.1"
+    },
+    "python": {
+      "locked_version": "1.4.6"
+    },
+    "build-essential": {
+      "locked_version": "2.0.6"
+    },
+    "yum-epel": {
+      "locked_version": "0.4.0"
+    },
+    "runit": {
+      "locked_version": "1.5.10"
+    },
+    "yum-mysql-community": {
+      "locked_version": "0.1.10"
+    }
+  }
+}
