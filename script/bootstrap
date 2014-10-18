@@ -1,36 +1,22 @@
 #!/bin/bash
 ## usage - sudo ./script/bootstrap
-## tested with Ruby 2.0.0
-
-echo 'uninstalling conflicting dependencies...'
-# uninstall conflicting dependencies
-gem uninstall spiceweasel --force
-gem uninstall berkshelf --force
-gem uninstall varia_model --force
-gem uninstall buff-config --force
-gem uninstal buff-extensions --force
-gem uninstall yajl-ruby --force
-
-echo 'installing spiceweasel dependencies...'
-# install
-gem install buff-extensions -v 0.3.0
-gem install varia_model -v 0.3.2
-gem install buff-config -v 0.4.0
-gem install json -v 1.7.7
-gem install yajl-ruby -v 1.2.1
-gem install berkshelf -v 2.0.18 --no-ri --no-rdoc
-berks -v
+## tested with Ruby 2.1.2
 
 echo 'installing spiceweasel...'
-gem install spiceweasel
+# gem install spiceweasel
+git clone 'https://github.com/mattray/spiceweasel.git' /tmp/spiceweasel
+cd /tmp/spiceweasel/
+git checkout 2.8
+gem build spiceweasel.gemspec
+gem install pkg/spiceweasel-2.8.0.gem
 
 # Vagrant needs to install nokogiri: http://nokogiri.org/tutorials/installing_nokogiri.html"
 echo "installing nokogiri dependency for vagrant plugins"
 if [ "$(uname)" == "Darwin" ]; then
-  sudo xcode-select --install
-  sudo brew install libxml2 libxslt libiconv
-  sudo brew link libxml2 libxslt libiconv
-  gem install nokogiri -- --with-iconv-dir=/usr/local/Cellar/libiconv/1.14/
+  xcode-select --install
+  brew install libxml2 libxslt libiconv
+  brew link libxml2 libxslt libiconv
+  install nokogiri -- --with-iconv-dir=/usr/local/Cellar/libiconv/1.14/
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   sudo yum install -y rubygem-nokogiri
   sudo yum install -y gcc ruby-devel libxml2 libxml2-devel libxslt libxslt-devel

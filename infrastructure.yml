@@ -2,6 +2,7 @@ berksfile:
     options: '--no-freeze --halt-on-frozen'
 
 roles:
+- mongodb:
 
 environments:
 - lsa-develop:
@@ -10,5 +11,5 @@ data bags:
 
 nodes:
 - vagrant 3:
-    run_list: recipe[mongodb::10gen_repo] recipe[mongodb::default]
+    run_list: role[mongodb]
     options: --box-url http://files.vagrantup.com/precise32.box -E lsa-develop --node-name lsamongo{{n}}

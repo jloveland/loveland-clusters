@@ -1,31 +1,26 @@
-{
-  "sources": {
-    "mongodb": {
-      "locked_version": "0.16.1"
-    },
-    "mysql": {
-      "locked_version": "5.5.1"
-    },
-    "apt": {
-      "locked_version": "2.5.3"
-    },
-    "yum": {
-      "locked_version": "3.3.1"
-    },
-    "python": {
-      "locked_version": "1.4.6"
-    },
-    "build-essential": {
-      "locked_version": "2.0.6"
-    },
-    "yum-epel": {
-      "locked_version": "0.4.0"
-    },
-    "runit": {
-      "locked_version": "1.5.10"
-    },
-    "yum-mysql-community": {
-      "locked_version": "0.1.10"
-    }
-  }
-}
+DEPENDENCIES
+  mongodb
+  mysql
+
+GRAPH
+  apt (2.6.0)
+  build-essential (2.1.2)
+  mongodb (0.16.1)
+    apt (>= 1.8.2)
+    python (>= 0.0.0)
+    runit (>= 1.5.0)
+    yum (>= 3.0)
+  mysql (5.5.4)
+    yum-mysql-community (>= 0.0.0)
+  python (1.4.6)
+    build-essential (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  runit (1.5.10)
+    build-essential (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  yum (3.4.0)
+  yum-epel (0.5.1)
+    yum (~> 3.0)
+  yum-mysql-community (0.1.10)
+    yum (>= 3.0)
