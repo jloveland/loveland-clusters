@@ -8,7 +8,7 @@ git clone 'https://github.com/mattray/spiceweasel.git' /tmp/spiceweasel
 cd /tmp/spiceweasel/
 git checkout 2.8
 gem build spiceweasel.gemspec
-gem install pkg/spiceweasel-2.8.0.gem
+gem install spiceweasel-2.8.0.gem
 
 # Vagrant needs to install nokogiri: http://nokogiri.org/tutorials/installing_nokogiri.html"
 echo "installing nokogiri dependency for vagrant plugins"
